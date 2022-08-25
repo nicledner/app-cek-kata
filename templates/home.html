@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <meta name="author" content="Brian Pinto">
+        <meta name="description" content="An application that can be used check spelling and get recomendation words">
+        <meta name="keywords" content="SPELL-CHECK, ENGLISH, WEBAPP, HEROKU">
+        <title>App: Cek Ejaan: Home</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&display=swap">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+		<link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="app-heading">
+                <h1>Aplikasi Pemeriksa Ejaan dan Rekomendasi</h1>
+                <h2>Welcome!</h2>
+            </div>
+        </header>
+        <main class=content>
+            <div class="app-note">
+                <p style="font-family: monospace;">(Aplikasi saat ini mendukung bahasa Inggris saja!)</p>
+            </div>
+            <div class="display-container">
+                <div class="left-container">
+                    <div class="input-wrapper">
+                        <form class="input-form" action="{{ url_for('home') }}" method="POST">
+                            <textarea id="input-text" name="input-text" placeholder="{{ input_placeholder }}"></textarea>
+                            <div class="buttons-wrapper">
+                                <button class="button" type="submit">Submit</button>
+                                <button class="button" type="reset">Clear</buttion>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <div class="output-wrapper">
+                        <p class="{{ output_style }}">
+                            {% for item in result %}
+                                {% if loop.index0==0 %}
+                                    {{ item }}<br/>
+                                {% else %}
+                                    <ul>
+                                        <li>
+                                            <b><u>{{ item[0] }}</u></b> <!--item[0] contains the word and item[1] contains its meaning-->
+                                            <p class="meaning_paragraph">
+                                                {% for word_meaning in item[1] %}
+                                                    {{ word_meaning }}<br/>
+                                                {% endfor %}
+                                            </p>
+                                        </li>
+                                    </ul>
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

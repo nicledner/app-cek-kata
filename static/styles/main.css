@@ -1,0 +1,112 @@
+/*variables*/
+:root{
+  --box-border-color: black;
+  --box-border-radius: 20px;
+  --box-border-width: 3px;
+  --box-fill: white;
+}
+
+html{
+  min-height: 100%;
+}
+
+body{
+  /*background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(37,37,37,1) 100%);*/
+  background-image: url(https://www.kibrispdr.org/data/28/chalkboard-background-high-resolution-0.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app-heading{
+  text-align:center;
+  color: white;
+  font-family: 'Itim', cursive;
+  padding-top: 2.5%;
+}
+
+.app-note{
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  font-size: 16px;
+}
+
+.display-container{
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  padding-top: 5%;
+}
+
+textarea{
+  width: 400px;
+  height: 100px;
+  background-color: var(--box-fill);
+  font-size: 16px;
+  border-style: solid;
+  border-color: var(--box-border-color);
+  border-width: var(--box-border-width);
+  padding: 5px;
+  border-radius: var(--box-border-radius);
+}
+
+.buttons-wrapper{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button{
+  color: black;
+  background-image: linear-gradient(to right, #7474BF 0%, #348AC7  51%, #7474BF  100%);
+  border-color: var(--box-border-color);
+  margin: 10px;
+  padding: 5px 10px;
+  text-align: center;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  background-size: 100% auto;
+  transition: 0.5s;
+}
+.button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.output-wrapper{
+  width: 600px;
+  min-height: 100px;
+  background-color: var(--box-fill);
+  color: black;
+  font-size: 16px;
+  border: solid;
+  border-color: var(--box-border-color);
+  border-width: var(--box-border-width);
+  padding: 5px;
+  border-radius: var(--box-border-radius);
+}
+
+.output-without-content{
+  margin: 5px;
+  color: lightgray;
+}
+
+.output-with-content{
+  margin: 5px;
+  color: black;
+}
+
+.meaning_paragraph{
+  color: rgb(109, 109, 109);
+  font-family: monospace;
+}
+
+.footer-wrapper{
+  margin-top: 60px;
+}
+
+.copyright-wrapper{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
